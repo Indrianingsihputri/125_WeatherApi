@@ -29,6 +29,8 @@ app.get("/api/lokasi", async (req, res) => {
             });
         }
 
+        const feature = data.features[0];
+
         res.json({
             kota: lokasi,
             koordinat: koordinat
