@@ -36,19 +36,12 @@ app.get("/api/lokasi", async (req, res) => {
         const lokasi = data.features[0].matching_text;
         const koordinat = data.features[0].geometry.coordinates;
 
-        res.json({
-            kota: lokasi,
-            koordinat : koordinat,
-            negara: negara,
-            provinsi: provinsi,
-            kecamatan: kecamatan
-        });
+        
 
          // Variabel wilayah
         let negara = "-";
         let provinsi = "-";
         let kecamatan = "-";
-
 
         // Membaca context dari MapTiler
         if (feature.context) {
@@ -80,6 +73,19 @@ app.get("/api/lokasi", async (req, res) => {
             `?latitude=${latitude}` +
             `&longitude=${longitude}` +
             `&current=temperature_2m`;
+        
+        const weatherResponse = await axios.get(weatherUrl);
+
+        const suhu = weatherResponse.data.current.temperature_2m;
+
+
+        res.json({
+            kota: lokasi,
+            koordinat : koordinat,
+            negara: negara,
+            provinsi: provinsi,
+            kecamatan: kecamatan
+        });
 
     }catch (error) {
         console.error(error.message);
