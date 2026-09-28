@@ -4,12 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geolocation</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            color: #1e3a5f;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #dce6f2;
+            border-radius: 12px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: #3498db;
+        }
+
+        .search-box button {
+            padding: 15px 25px;
+            border: none;
+            border-radius: 12px;
+            background: #3498db;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .search-box button:hover {
+            background: #217dbb;
+            transform: translateY(-2px);
+        }
+
+        .student {
+            background: #f3f8fc;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .weather-card {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .weather-card .icon {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .weather-card h2 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .temperature {
+            font-size: 55px;
+            font-weight: bold;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .info-card {
+            background: #f7f9fc;
+            border-radius: 15px;
+            padding: 20px;
+            border-left: 5px solid #3498db;
+        }
+
+        .info-card h3 {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            font-size: 19px;
+            font-weight: bold;
+            color: #1e3a5f;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px;
+            color: #3498db;
+        }
+
+        .error {
+            display: none;
+            background: #ffe6e6;
+            color: #c0392b;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 25px;
+            color: #777;
+            font-size: 13px;
+        }
+
+        @media (max-width: 600px) {
+            .search-box {
+                flex-direction: column;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <h1>🌤️ Weather & Geolocation</h1>
+            <p>Masukkan nama kota untuk mendapatkan informasi lokasi.</p>
+            
+        </div>
+
+        <div>
+
+            <h3> Nama : Indrianingsih Putri </h3>
+            <h3> NIM : 20240140125 </h3>
+
+        </div>
     
-    <h3> Nama : </h3>
-    <h3> NIM : </h3>
+    
 
     <p>
         kota :
