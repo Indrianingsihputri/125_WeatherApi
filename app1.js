@@ -26,6 +26,13 @@ app.get("/api/lokasi", async (req, res) => {
             });
         }
 
+        // Mengambil koordinat
+        const feature = data.features[0];
+        const koordinat = feature.geometry.coordinates;
+
+        const longitude = koordinat[0];
+        const latitude = koordinat[1];
+
         const lokasi = data.features[0].matching_text;
         const koordinat = data.features[0].geometry.coordinates;
 
