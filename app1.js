@@ -38,13 +38,41 @@ app.get("/api/lokasi", async (req, res) => {
 
         res.json({
             kota: lokasi,
-            koordinat : koordinat
+            koordinat : koordinat,
+            negara: negara,
+            provinsi: provinsi,
+            kecamatan: kecamatan
         });
 
          // Variabel wilayah
         let negara = "-";
         let provinsi = "-";
         let kecamatan = "-";
+
+
+        // Membaca context dari MapTiler
+        if (feature.context) {
+            feature.context.forEach((item) => {
+
+                if (item.id.startsWith("country")) {
+                    negara = item.text;
+                }
+
+                if (
+                    item.id.startsWith("state") ||
+                    item.id.startsWith("region")
+                ) {
+                    provinsi = item.text;
+                }
+
+                if (
+                    item.id.startsWith("district") ||
+                    item.id.startsWith("county")
+                ) {
+                    kecamatan = item.text;
+                }
+            });
+        }
 
     }catch (error) {
         console.error(error.message);
