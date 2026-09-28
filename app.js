@@ -31,6 +31,15 @@ app.get("/api/lokasi", async (req, res) => {
 
         const feature = data.features[0];
 
+        // Mengambil koordinat
+        const koordinat = feature.geometry.coordinates;
+
+        const longitude = koordinat[0];
+        const latitude = koordinat[1];
+
+
+
+
         res.json({
             kota: lokasi,
             koordinat: koordinat
