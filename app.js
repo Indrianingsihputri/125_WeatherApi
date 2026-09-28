@@ -22,11 +22,18 @@ app.get("/api/lokasi", async (req, res) => {
         const lokasi = data.features[0].matching_text;
         const koordinat = data.features[0].geometry.coordinates;
 
+        // Memastikan data lokasi ditemukan
+        if (!data.features || data.features.length === 0) {
+            return res.status(404).json({
+                message: "Lokasi tidak ditemukan"
+            });
+        }
+
         res.json({
             kota: lokasi,
             koordinat: koordinat
         });
-        
+
     } catch (error) {
         console.error(error.message);
 
