@@ -195,7 +195,25 @@
         <h3> NIM : 20240140125 </h3>
     </div>
     
+    <!-- INPUT LOKASI --> 
+     <div class="search-box"> 
+        <input type="text" id="lokasi" placeholder="Masukkan lokasi, contoh: Yogyakarta" > 
+        <button onclick="cariLokasi()"> 🔍 Cari </button> 
+    </div>
 
+    <!-- LOADING --> 
+    <div id="loading" class="loading"> ⏳ Sedang mengambil data... </div> 
+    
+    <!-- ERROR --> 
+     <div id="error" class="error"> </div> 
+     
+    <!-- WEATHER CARD --> 
+    <div class="weather-card"> 
+        <div class="icon"> 🌤️ </div> 
+        <h2 id="namaLokasi"> Belum ada lokasi </h2> 
+        <div class="temperature"> <span id="suhu">--</span> °C </div> <p> Suhu saat ini </p> </div>
+
+        
     <p>
         kota :
 
