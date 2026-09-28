@@ -41,6 +41,11 @@ app.get("/api/lokasi", async (req, res) => {
             koordinat : koordinat
         });
 
+         // Variabel wilayah
+        let negara = "-";
+        let provinsi = "-";
+        let kecamatan = "-";
+
     }catch (error) {
         console.error(error.message);
 
