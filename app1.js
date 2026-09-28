@@ -74,6 +74,13 @@ app.get("/api/lokasi", async (req, res) => {
             });
         }
 
+        // Mengambil data suhu dari Open-Meteo
+        const weatherUrl =
+            `https://api.open-meteo.com/v1/forecast` +
+            `?latitude=${latitude}` +
+            `&longitude=${longitude}` +
+            `&current=temperature_2m`;
+
     }catch (error) {
         console.error(error.message);
 
